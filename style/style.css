@@ -31,7 +31,8 @@
         position: absolute;
         right: 10%;
         border: 5px;
-        
+        width: 50%;
+        height: 600px;
         
         
     }
@@ -110,7 +111,7 @@ li a{
 }
 li a.active {
     background-color: #ff0808;
-    color: rgb(204, 211, 15);
+    color: rgb(0, 0, 0);
     size-adjust: auto;
 }
 li a:hover {
@@ -135,10 +136,11 @@ li a:hover {
 }
 
 section h2{
-    background-color: #f918fd;
+    background-color: #f918fd6f;
     text-align: center;
     font-size: larger;
     font-style: italic;
+    overflow: scroll;
 }   
 
 
