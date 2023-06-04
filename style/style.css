@@ -18,7 +18,7 @@
           "main"
           "principal"
           "footer ";
-        grid-template-rows: 300px auto auto 500px 100px; 
+        grid-template-rows: 300px auto auto 600px auto; 
         grid-template-columns: auto;
     
     }
@@ -27,11 +27,21 @@
         display: inline-flex;
     }
 
-    li{
-        float: center;
+    #mapa{
+        position: absolute;
+        right: 10%;
+        border: 5px;
+        
+        
+        
     }
 
- }   
+    form{
+        position: absolute;
+        left: 10%;
+    }
+
+    }   
     
  .border {
     border: 1px solid black;
@@ -132,10 +142,7 @@ section h2{
 }   
 
 
-#mapa{
-   position: relative;
-    
-   }
+
 .pfooter{
     display: inline;
 }
