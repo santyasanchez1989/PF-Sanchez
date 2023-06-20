@@ -1,0 +1,11 @@
+{
+  "name": "preentrega2-sanchez",
+  "version": "1.0.0",
+  "description": "vete",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santiago A. Sanchez",
+  "license": "ISC"
+}
