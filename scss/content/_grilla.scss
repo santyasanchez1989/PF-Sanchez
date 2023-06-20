@@ -1,0 +1,11 @@
+#grilla {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "nav principal"
+      "footer footer";
+    grid-template-rows: 200px 150px 400px 50px; 
+    grid-template-columns: 35% 65% ;
+    }
+    
