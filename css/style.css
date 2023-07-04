@@ -12,6 +12,10 @@
     grid-template-rows: 250px auto auto auto auto;
     grid-template-columns: auto;
   }
+  section p {
+    font-size: xx-large;
+    font-family: "Times New Roman", Times, serif;
+  }
   #mapa {
     position: absolute;
     right: 10%;
@@ -48,7 +52,7 @@ main {
   grid-area: main;
 }
 main h1 {
-  color: #f06d09;
+  color: #333233;
   text-align: center;
   text-decoration: underline;
 }
@@ -57,8 +61,8 @@ section {
   grid-area: principal;
   text-align: center;
   text-decoration: solid;
-  font-size: x-large;
-  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+  font-family: "Times New Roman", Times, serif;
   overflow: scroll;
 }
 section h2 {
