@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Veterinaria, Suiza, Veterinaria Suiza, Jose Clemente Paz, veterinarios ">
     <title>Veterinaria Suiza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" href="media/suiza.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -14,29 +15,38 @@
  <div id="grilla">  
     
     <header class="border">
-         <img src="./media/Veterinaria suiza.jpg" alt="imagen logo">
+         <img src="./media/frente.jpg" alt="imagen logo">
     </header>
 
-    <nav class="border">
-        <ul>
-            <li>
-                <a href="#" class="active">Inicio</a>
-            </li>
-            <li>
-                <a href="pages/servicios.html">Servicios</a>
-            </li>
-            <li>
-                <a href="pages/preg-frec.html">Preguntas Frecuentes</a>
-            </li>
-            <li>
-                <a href="pages/sobre-nos.html">Sobre Nosotros</a>
-            </li>
-            <li>
-                <a href="pages/contaco.html">Contactenos</a>
-            </li>
-            
-        </ul>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./media/titulovete.jpg" alt="logo" width="180px">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav" style="font-size: x-large; font-style: italic;">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page"   >Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/servicios.html" >Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/sobre-nos.html" >Sobre Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/preg-frec.html"  >Preguntas Frecuentes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contaco.html"  >Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     
     <main class="border">
              <h1>Veterinaria Suiza</h1>
@@ -46,8 +56,25 @@
         <p>Bienvenidos a la WEB de la Veterinaria Suiza, del Dr. Schuster. Hace mas de 43 años brindando servicio para el bienestar de sus mascotas. En esta pagina podras encontrar toda la informacion necesaria para saber a que nos dedicamos, los servicios que brindamos, al staff y formas de contactarse con nosotros. Gracias por elegirnos.
         </p>
 
-        <img class="img-index" src="./media/vete1.jpg" alt="noimg">
+        <div id="carru" >
+            <div id="carouselExampleSlidesOnly"  class="carousel slide" data-bs-ride="carousel" max-width="70%"  >
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="media/recep.jpg" class="d-block w-100" alt="no img" >
+                </div>
+                <div class="carousel-item">
+                    <img src="media/consul1.jpg" class="d-block w-100" alt="no img" max-width="70%" >
+                </div>
+                <div class="carousel-item">
+                    <img src="media/consul2.jpg" class="d-block w-100" alt="no img">
+                </div>
+            </div>
+          </div>
+        </div>  
     </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
  </body>
 
     <footer class="border">
