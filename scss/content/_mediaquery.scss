@@ -13,7 +13,7 @@
           "main"
           "principal"
           "footer";
-        grid-template-rows: 250px auto auto auto auto; 
+        grid-template-rows: 220px auto auto auto auto; 
         grid-template-columns: auto;
     
     }
@@ -27,13 +27,13 @@
                  }
 
                  form{
-                   padding-left: 10%;
+                   padding-left: 15%;
                    float: left;
                    
                 }
 
                #mapa{
-                        padding-right: 10%; 
+                        padding-right: 15%; 
                         float: right;
                         border-right: 10px;
                         width: 50%;
