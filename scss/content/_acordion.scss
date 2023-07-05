@@ -1,0 +1,35 @@
+.accordion-button {
+    background: linear-gradient(to right, rgb(193, 40, 180), rgb(239, 192, 250));;
+    color: #fff;
+    border-color: #007bff;
+    font-size: 30px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .accordion-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background: linear-gradient(to right, rgb(193, 40, 180), rgb(239, 192, 250));;
+    color: #fff;
+  }
+  
+  .accordion-item {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 10px;
+    ;
+  }
+  
+  .accordion-body {
+    padding: 10px;
+  }

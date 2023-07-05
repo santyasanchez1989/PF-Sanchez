@@ -1,6 +1,6 @@
 .border {
     border: 1px solid black;
-    background-color: #ebebeb;
+    background-color:rgb(255, 255, 255);
  }
 
 
@@ -20,11 +20,14 @@
 
    
     section{
-
-             p{
-                font-size: x-large;
-                font-family: 'Times New Roman', Times, serif;
-                 }
+            
+                div{
+                              p{
+                                   font-size: x-large;
+                                   font-family: 'Times New Roman', Times, serif;
+            
+                                 }
+                   }           
 
                  form{
                    padding-left: 15%;
