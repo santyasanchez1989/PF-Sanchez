@@ -1,6 +1,4 @@
-
- 
- header {
+header {
     grid-area: header;
     img{
         border-radius: 10px;
@@ -14,13 +12,12 @@
 
 main{
     grid-area: main;
-    
-    h1{
-        color: #333233;
-        text-align: center;
-        text-decoration: underline;
-     }
+    text-align: center;
 
+            img{
+                
+                max-width: 90%;
+            }
      
  }
 
@@ -33,7 +30,19 @@ section{
         font-family: 'Times New Roman', Times, serif;
         
 
-            
+            h1{
+                
+                color: black;
+                text-align: center;
+                font-weight: bolder;
+                font-style: italic;
+                font-size: larger;
+                text-decoration: underline;
+            }
+
+            .boton{
+                font-size: 20px;
+            }
                 
             
             p{
@@ -43,10 +52,7 @@ section{
                 
             
 
-       
-                    
-  
-    }
+       }
 
 footer {
      grid-area: footer;

@@ -1,9 +1,7 @@
 .accordion-button {
-    background: linear-gradient(to right, rgb(193, 40, 180), rgb(239, 192, 250));;
+    background: $accord;
     color: #fff;
     border-color: #007bff;
-    font-size: 30px;
-    font-style: italic;
     font-family: 'Times New Roman', Times, serif;
   }
   
@@ -13,8 +11,9 @@
   }
   
   .accordion-button:not(.collapsed) {
-    background: linear-gradient(to right, rgb(193, 40, 180), rgb(239, 192, 250));;
+    background: $accord;
     color: #fff;
+   
   }
   
   .accordion-item {
@@ -24,12 +23,13 @@
   }
   
   .accordion-header {
-    background-color: #f8f9fa;
+    background-color: $fondo;
     border: none;
     padding: 10px;
-    ;
+    
   }
   
   .accordion-body {
     padding: 10px;
+    background-color: $fondo;
   }
