@@ -28,8 +28,10 @@ section{
         text-decoration: solid;
         font-size: large;
         font-family: 'Times New Roman', Times, serif;
-        
+        border: 30px;
+        border-color: $fondo;
 
+            
             h1{
                 
                 color: black;
@@ -39,6 +41,8 @@ section{
                 font-size: larger;
                 text-decoration: underline;
             }
+            
+         
 
             .boton{
                 font-size: 20px;

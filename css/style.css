@@ -42,10 +42,12 @@ html {
     font-family: "Times New Roman", Times, serif;
   }
   section form {
+    padding-top: 30px;
     padding-left: 15%;
     float: left;
   }
   section #mapa {
+    padding-top: 30px;
     padding-right: 15%;
     float: right;
     border-right: 10px;
@@ -77,6 +79,8 @@ section {
   text-decoration: solid;
   font-size: large;
   font-family: "Times New Roman", Times, serif;
+  border: 30px;
+  border-color: rgb(215, 215, 196);
 }
 section h1 {
   color: black;

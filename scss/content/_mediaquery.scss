@@ -16,6 +16,8 @@
 
    
     section{
+      
+      
                 
                 h1{
                   display: none;
@@ -45,12 +47,14 @@
                    }           
 
                  form{
+                  padding-top: 30px;
                    padding-left: 15%;
                    float: left;
                    
                 }
 
-               #mapa{
+               #mapa{ 
+                        padding-top: 30px;
                         padding-right: 15%; 
                         float: right;
                         border-right: 10px;
