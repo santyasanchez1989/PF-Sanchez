@@ -25,6 +25,9 @@ html {
     grid-template-rows: 220px auto auto auto auto;
     grid-template-columns: auto;
   }
+  section {
+    padding: 30px 50px 20px;
+  }
   section h1 {
     display: none;
   }
@@ -42,12 +45,10 @@ html {
     font-family: "Times New Roman", Times, serif;
   }
   section form {
-    padding-top: 30px;
     padding-left: 15%;
     float: left;
   }
   section #mapa {
-    padding-top: 30px;
     padding-right: 15%;
     float: right;
     border-right: 10px;
@@ -106,7 +107,7 @@ footer p {
 }
 
 .accordion-button {
-  background: linear-gradient(to right, rgb(237, 64, 52), rgb(237, 174, 168));
+  background: linear-gradient(to right, rgb(178, 14, 2), rgb(237, 174, 168));
   color: #fff;
   border-color: #007bff;
   font-family: "Times New Roman", Times, serif;
@@ -118,7 +119,7 @@ footer p {
 }
 
 .accordion-button:not(.collapsed) {
-  background: linear-gradient(to right, rgb(237, 64, 52), rgb(237, 174, 168));
+  background: linear-gradient(to right, rgb(178, 14, 2), rgb(237, 174, 168));
   color: #fff;
 }
 
