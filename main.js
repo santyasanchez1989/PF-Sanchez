@@ -6,6 +6,7 @@ const contenedorCitas = document.getElementById('citas');
 
 let citas = [];
 
+
 botonEnviar.addEventListener('click', () => {
   const nombres = inputNombres.value;
   const nombreMascota = inputNombreMascota.value;
@@ -20,11 +21,30 @@ botonEnviar.addEventListener('click', () => {
       inputNombres.value = '';
       inputNombreMascota.value = '';
       inputFechaHora.value = '';
+      mostrarMensajeExitoso();
     } else {
-      alert('En ese horario seleccionado, la veterinaria se encuentra cerrada.');
+      mostrarMensajeError('En el horario seleccionado, la Veterinaria permanece cerrada.');
     }
+  } else {
+    mostrarMensajeError('Por favor, complete todos los campos.');
   }
 });
+
+function mostrarMensajeExitoso() {
+  Swal.fire({
+    title: '¡Cita reservada!',
+    text: 'La cita se ha reservado correctamente.',
+    icon: 'success',
+  });
+}
+
+function mostrarMensajeError(mensaje) {
+  Swal.fire({
+    title: 'No se pudo generar la cita.',
+    text: mensaje,
+    icon: 'warning',
+  });
+}
 
 function validarHorario(fechaHora) {
   const fechaSeleccionada = new Date(fechaHora);
