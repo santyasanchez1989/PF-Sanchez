@@ -21,7 +21,7 @@ botonEnviar.addEventListener('click', () => {
       inputNombreMascota.value = '';
       inputFechaHora.value = '';
     } else {
-      alert('El horario seleccionado no está disponible.');
+      alert('En ese horario seleccionado, la veterinaria se encuentra cerrada.');
     }
   }
 });
@@ -32,8 +32,12 @@ function validarHorario(fechaHora) {
   const hora = fechaSeleccionada.getHours();
   const minutos = fechaSeleccionada.getMinutes();
 
-  if (diaSemana >= 1 && diaSemana <= 6) { 
+  if (diaSemana >= 1 && diaSemana <= 5) { 
     if ((hora >= 9 && hora < 13) || (hora >= 14 && hora < 17 && minutos < 30)) {
+      return true;
+    }
+  } else if (diaSemana === 6) { 
+    if (hora >= 9 && hora < 13) {
       return true;
     }
   }
