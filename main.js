@@ -14,37 +14,53 @@ botonEnviar.addEventListener('click', () => {
 
   if (nombres && nombreMascota && fechaHora) {
     if (validarHorario(fechaHora)) {
-      const cita = { nombres, nombreMascota, fechaHora };
-      citas.push(cita);
-      actualizarHorario();
-      guardarCitasEnLocalStorage();
-      inputNombres.value = '';
-      inputNombreMascota.value = '';
-      inputFechaHora.value = '';
-      mostrarMensajeExitoso();
+      agregarCitaAsync(nombres, nombreMascota, fechaHora)
+        .then(() => {
+          actualizarHorario();
+          guardarCitasEnLocalStorage();
+          inputNombres.value = '';
+          inputNombreMascota.value = '';
+          inputFechaHora.value = '';
+          mostrarMensajeExitoso('Cita reservada exitosamente.');
+        })
+        .catch((error) => {
+          mostrarMensajeError(`Error al agregar la cita: ${error}`);
+        });
     } else {
-      mostrarMensajeError('En el horario seleccionado, la Veterinaria permanece cerrada.');
+      mostrarMensajeError('En el horario seleccionada la VETERINAIRA se encuentra cerrada.');
     }
   } else {
-    mostrarMensajeError('Por favor, complete todos los campos.');
+    mostrarMensajeError('Por favor, complete TODOS los campos.');
   }
 });
 
-function mostrarMensajeExitoso() {
+function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
+  return new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+      const cita = { nombres, nombreMascota, fechaHora };
+      citas.push(cita);
+      resolve();
+    }, 3000); 
+  });
+}
+
+function mostrarMensajeExitoso(mensaje) {
   Swal.fire({
-    title: '¡Cita reservada!',
-    text: 'La cita se ha reservado correctamente.',
+    title: '¡Éxito!',
+    text: mensaje,
     icon: 'success',
   });
 }
 
 function mostrarMensajeError(mensaje) {
   Swal.fire({
-    title: 'No se pudo generar la cita.',
+    title: 'No se pudo reservar la cita solicitada.',
     text: mensaje,
     icon: 'warning',
   });
 }
+
 
 function validarHorario(fechaHora) {
   const fechaSeleccionada = new Date(fechaHora);
