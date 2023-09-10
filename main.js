@@ -6,7 +6,6 @@ const contenedorCitas = document.getElementById('citas');
 
 let citas = [];
 
-
 botonEnviar.addEventListener('click', () => {
   const nombres = inputNombres.value;
   const nombreMascota = inputNombreMascota.value;
@@ -14,6 +13,7 @@ botonEnviar.addEventListener('click', () => {
 
   if (nombres && nombreMascota && fechaHora) {
     if (validarHorario(fechaHora)) {
+      obtenerImagenPerro(); // Mueve esta línea aquí para mostrar la imagen antes de la confirmación.
       agregarCitaAsync(nombres, nombreMascota, fechaHora)
         .then(() => {
           actualizarHorario();
@@ -32,17 +32,15 @@ botonEnviar.addEventListener('click', () => {
   } else {
     mostrarMensajeError('Por favor, complete todos los DATOS solicitados. Gracias.');
   }
-  obtenerImagenPerro();
 });
 
 function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
   return new Promise((resolve, reject) => {
-    
     setTimeout(() => {
       const cita = { nombres, nombreMascota, fechaHora };
       citas.push(cita);
       resolve();
-    }, 5000); 
+    }, 5000);
   });
 }
 
@@ -59,9 +57,9 @@ function mostrarMensajeError(mensaje) {
     title: 'No pudimos agendar tu TURNO',
     text: mensaje,
     icon: 'warning',
+    timer: 4000,
   });
 }
-
 
 function validarHorario(fechaHora) {
   const fechaSeleccionada = new Date(fechaHora);
@@ -69,17 +67,18 @@ function validarHorario(fechaHora) {
   const hora = fechaSeleccionada.getHours();
   const minutos = fechaSeleccionada.getMinutes();
 
-  if (diaSemana >= 1 && diaSemana <= 5) { 
+  if (diaSemana >= 1 && diaSemana <= 5) {
     if ((hora >= 9 && hora < 13) || (hora >= 14 && hora < 17 && minutos < 30)) {
       return true;
     }
-  } else if (diaSemana === 6) { 
+  } else if (diaSemana === 6) {
     if (hora >= 9 && hora < 13) {
       return true;
     }
   }
   return false;
 }
+
 function actualizarHorario() {
   contenedorCitas.innerHTML = '<h2>Horario de Citas</h2>';
   if (citas.length === 0) {
@@ -116,9 +115,6 @@ function cargarCitasDesdeLocalStorage() {
 cargarCitasDesdeLocalStorage();
 actualizarHorario();
 
-
-const dogImageElement = document.getElementById('dogImage');
-
 function obtenerImagenPerro() {
   const apiUrl = 'https://dog.ceo/api/breeds/image/random';
 
@@ -126,23 +122,20 @@ function obtenerImagenPerro() {
     .then((response) => response.json())
     .then((data) => {
       const imageUrl = data.message;
-
-     
       mostrarSweetAlertConImagen(imageUrl);
     })
     .catch((error) => {
       console.error('Error al obtener la imagen del perro:', error);
-      dogImageElement.src = 'placeholder.jpg'; 
     });
 }
 
 function mostrarSweetAlertConImagen(imageUrl) {
   Swal.fire({
-    title: 'Agendando su turno',
+    title: 'Agendando su TURNO.',
     imageUrl: imageUrl,
-    imageWidth: 400, 
-    imageHeight: 300, 
-    imageAlt: 'Imagen de un perros aleatoreas',
-    showConfirmButton: false, 
+    imageWidth: 400,
+    imageHeight: 300,
+    imageAlt: 'Imagen de perros aleatoreas',
+    showConfirmButton: false,
   });
 }
