@@ -27,17 +27,17 @@ botonEnviar.addEventListener('click', () => {
           mostrarMensajeError(`Error al agregar la cita: ${error}`);
         });
     } else {
-      mostrarMensajeError('El horario seleccionado no está disponible.');
+      mostrarMensajeError('En el horario seleccionado la VETERINARIA se encuentra cerrada, Gracias.');
     }
   } else {
-    mostrarMensajeError('Por favor, complete todos los campos.');
+    mostrarMensajeError('Por favor, complete todos los campos solicitados.');
   }
 });
 
 function agregarCita(nombres, nombreMascota, fechaHora) {
   const cita = { nombres, nombreMascota, fechaHora };
 
-  return fetch('data.json') 
+  return fetch('./data.json') 
     .then((response) => {
       if (!response.ok) {
         throw new Error('No se pudo cargar el archivo data.json');
