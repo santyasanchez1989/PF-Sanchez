@@ -14,39 +14,34 @@ botonEnviar.addEventListener('click', () => {
 
   if (nombres && nombreMascota && fechaHora) {
     if (validarHorario(fechaHora)) {
-      agregarCita(nombres, nombreMascota, fechaHora)
+      agregarCitaAsync(nombres, nombreMascota, fechaHora)
         .then(() => {
           actualizarHorario();
           guardarCitasEnLocalStorage();
           inputNombres.value = '';
           inputNombreMascota.value = '';
           inputFechaHora.value = '';
-          mostrarMensajeExitoso('Cita reservada exitosamente.');
+          mostrarMensajeExitoso('Turno reservado exitosamente.');
         })
         .catch((error) => {
-          mostrarMensajeError(`Error al agregar la cita: ${error}`);
+          mostrarMensajeError(`Error al agendar el turno: ${error}`);
         });
     } else {
-      mostrarMensajeError('En el horario seleccionado la VETERINARIA se encuentra cerrada, Gracias.');
+      mostrarMensajeError('En el horario seleccionado la VETERINARIA se encuentra cerrada. Muchas Gracias!');
     }
   } else {
-    mostrarMensajeError('Por favor, complete todos los campos solicitados.');
+    mostrarMensajeError('Por favor, complete todos los DATOS solicitados. Gracias.');
   }
 });
 
-function agregarCita(nombres, nombreMascota, fechaHora) {
-  const cita = { nombres, nombreMascota, fechaHora };
-
-  return fetch('data.json')
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('No se pudo cargar el archivo data.json');
-    }
-    return response.json();
-  })
-  .then((data) => {
-    data.push(cita); 
-   
+function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
+  return new Promise((resolve, reject) => {
+    
+    setTimeout(() => {
+      const cita = { nombres, nombreMascota, fechaHora };
+      citas.push(cita);
+      resolve();
+    }, 1500); 
   });
 }
 
@@ -60,7 +55,7 @@ function mostrarMensajeExitoso(mensaje) {
 
 function mostrarMensajeError(mensaje) {
   Swal.fire({
-    title: 'No se pudo reservar la cita solicitada.',
+    title: 'No pudimos agendar tu TURNO',
     text: mensaje,
     icon: 'warning',
   });
