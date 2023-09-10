@@ -32,6 +32,7 @@ botonEnviar.addEventListener('click', () => {
   } else {
     mostrarMensajeError('Por favor, complete todos los DATOS solicitados. Gracias.');
   }
+  obtenerImagenPerro();
 });
 
 function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
@@ -41,7 +42,7 @@ function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
       const cita = { nombres, nombreMascota, fechaHora };
       citas.push(cita);
       resolve();
-    }, 1500); 
+    }, 5000); 
   });
 }
 
@@ -114,3 +115,34 @@ function cargarCitasDesdeLocalStorage() {
 
 cargarCitasDesdeLocalStorage();
 actualizarHorario();
+
+
+const dogImageElement = document.getElementById('dogImage');
+
+function obtenerImagenPerro() {
+  const apiUrl = 'https://dog.ceo/api/breeds/image/random';
+
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      const imageUrl = data.message;
+
+     
+      mostrarSweetAlertConImagen(imageUrl);
+    })
+    .catch((error) => {
+      console.error('Error al obtener la imagen del perro:', error);
+      dogImageElement.src = 'placeholder.jpg'; 
+    });
+}
+
+function mostrarSweetAlertConImagen(imageUrl) {
+  Swal.fire({
+    title: 'Agendando su turno',
+    imageUrl: imageUrl,
+    imageWidth: 400, 
+    imageHeight: 300, 
+    imageAlt: 'Imagen de un perros aleatoreas',
+    showConfirmButton: false, 
+  });
+}
