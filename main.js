@@ -57,7 +57,6 @@ function mostrarMensajeError(mensaje) {
     title: 'No pudimos agendar tu TURNO',
     text: mensaje,
     icon: 'warning',
-    timer: 4000,
   });
 }
 
