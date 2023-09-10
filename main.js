@@ -37,20 +37,17 @@ botonEnviar.addEventListener('click', () => {
 function agregarCita(nombres, nombreMascota, fechaHora) {
   const cita = { nombres, nombreMascota, fechaHora };
 
-  return fetch('./data.json') 
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('No se pudo cargar el archivo data.json');
-      }
-      return response.json();
-    })
-    .then((data) => {
-      data.push(cita); 
-      return fetch('./data.json', {
-        method: 'GET',
-        body: JSON.stringify(data),
-      });
-    });
+  return fetch('data.json')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('No se pudo cargar el archivo data.json');
+    }
+    return response.json();
+  })
+  .then((data) => {
+    data.push(cita); 
+   
+  });
 }
 
 function mostrarMensajeExitoso(mensaje) {
