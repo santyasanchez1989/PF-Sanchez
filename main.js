@@ -13,7 +13,7 @@ botonEnviar.addEventListener('click', () => {
 
   if (nombres && nombreMascota && fechaHora) {
     if (validarHorario(fechaHora)) {
-      obtenerImagenPerro(); // Mueve esta línea aquí para mostrar la imagen antes de la confirmación.
+      obtenerImagenPerro();
       agregarCitaAsync(nombres, nombreMascota, fechaHora)
         .then(() => {
           actualizarHorario();
