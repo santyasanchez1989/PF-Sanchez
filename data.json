@@ -1,0 +1,37 @@
+[
+    {
+      "nombres": "Juan Pérez",
+      "nombreMascota": "Luna",
+      "fechaHora": "2023-09-21T10:00:00"
+    },
+    {
+      "nombres": "María G.",
+      "nombreMascota": "Bobby",
+      "fechaHora": "2023-09-20T15:30:00"
+    },
+    {
+      "nombres": "Lucia S",
+      "nombreMascota": "Toby",
+      "fechaHora": "2023-09-20T11:15:00"
+    },
+    {
+      "nombres": "Santiago S",
+      "nombreMascota": "Amy",
+      "fechaHora": "2023-09-19T09:30:00"
+    },
+    {
+      "nombres": "Flor C.",
+      "nombreMascota": "Sophy",
+      "fechaHora": "2023-09-13T09:00:00"
+    },
+    {
+      "nombres": "Juan M",
+      "nombreMascota": "Malena",
+      "fechaHora": "2023-09-12T10:45:00"
+    },
+    {
+      "nombres": "Sofía V.",
+      "nombreMascota": "Coqui",
+      "fechaHora": "2023-09-12T12:00:00"
+    }
+  ]
