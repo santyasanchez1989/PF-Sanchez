@@ -14,7 +14,7 @@ botonEnviar.addEventListener('click', () => {
 
   if (nombres && nombreMascota && fechaHora) {
     if (validarHorario(fechaHora)) {
-      agregarCitaAsync(nombres, nombreMascota, fechaHora)
+      agregarCita(nombres, nombreMascota, fechaHora)
         .then(() => {
           actualizarHorario();
           guardarCitasEnLocalStorage();
@@ -27,22 +27,30 @@ botonEnviar.addEventListener('click', () => {
           mostrarMensajeError(`Error al agregar la cita: ${error}`);
         });
     } else {
-      mostrarMensajeError('En el horario seleccionada la VETERINAIRA se encuentra cerrada.');
+      mostrarMensajeError('El horario seleccionado no está disponible.');
     }
   } else {
-    mostrarMensajeError('Por favor, complete TODOS los campos.');
+    mostrarMensajeError('Por favor, complete todos los campos.');
   }
 });
 
-function agregarCitaAsync(nombres, nombreMascota, fechaHora) {
-  return new Promise((resolve, reject) => {
-    
-    setTimeout(() => {
-      const cita = { nombres, nombreMascota, fechaHora };
-      citas.push(cita);
-      resolve();
-    }, 3000); 
-  });
+function agregarCita(nombres, nombreMascota, fechaHora) {
+  const cita = { nombres, nombreMascota, fechaHora };
+
+  return fetch('data.json') 
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('No se pudo cargar el archivo data.json');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      data.push(cita); 
+      return fetch('./data.json', {
+        method: 'GET',
+        body: JSON.stringify(data),
+      });
+    });
 }
 
 function mostrarMensajeExitoso(mensaje) {
